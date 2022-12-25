@@ -3,7 +3,18 @@
  * create object person with firstName and lastName properties
  * implement method getFullName that returns full name
  */
-const person = ''; //put you object here
+const person = {
+   firstName: "Ann",
+   lastName: "Kra",
+
+
+   getFullName(){
+    return firstName + lastName;
+  }
+
+  };
+  console.log(person.getFullName());
+  
 
 /**
  * create object student that has property grade and method getGrade
