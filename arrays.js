@@ -5,7 +5,7 @@
  * @param {Array} chars
  * @return {Array} - char names
  */
-
+1
 function getCharactersNames(chars) {
  chars = require('../data/characters.json');
  const newNames = chars.map(char =>{
