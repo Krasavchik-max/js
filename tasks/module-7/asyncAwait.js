@@ -15,8 +15,19 @@ const { getDogs, getCats, getBirds } = require('./utils/utilPromises');
  *
  */
 async function asyncPromiseResolve() {
-  //PLACE YOUR CODE HERE:
+  try {
+    const result = await promiseResolve();
+    return `${result} with async await`;
+  } catch (error) {
+    console.error(error);
+  }
 }
+
+
+
+  
+  
+
 
 /**
  * TASK-2: Reject the created earlier promiseReject() promise
@@ -25,8 +36,15 @@ async function asyncPromiseResolve() {
  * @returns {Promise<"Rejected! with async await">}
  */
 async function asyncPromiseReject() {
-  //PLACE YOUR CODE HERE:
+  try {
+    await promiseReject();
+  } catch (error) {
+    return `${error.message} with async await`;
+  }
 }
+
+
+
 
 /**
  * TASK-3:
@@ -36,8 +54,17 @@ async function asyncPromiseReject() {
  * @returns {Promise<"['DOGS', 'CATS', 'BIRDS']">}
  */
 async function asyncPromiseAll() {
-  //PLACE YOUR CODE HERE:
+  const dogs = await getDogs();
+  const cats = await getCats();
+  const birds = await getBirds();
+  const animals = [dogs, cats, birds];
+  return animals.map((animal) => animal.toUpperCase());
+ 
 }
+asyncPromiseAll().then((result) => {
+  console.log(result); // ['DOGS', 'CATS', 'BIRDS']
+});
+
 
 module.exports = {
   asyncPromiseResolve,
